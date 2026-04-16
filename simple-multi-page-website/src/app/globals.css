@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-saira-stencil), sans-serif;
+}
+
+.underlineAnimation {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.underlineAnimation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #f87000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.underlineAnimation:hover::after,
+.underlineAnimation:focus-visible::after {
+  transform: scaleX(1);
+}
